@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake shop</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        $.ajax({
+                    'url':'http://localhost:8080/login',
+                    'type':"GET",
+                    'headers': {"Authorization": localStorage.getItem('A-token')}           
+                });
+            
+            function exit(object){
+            localStorage.removeItem("A-Token", data);
+        }
+    </script>
+
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CAKE SH<i class="fa fa-circle"></i>P</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="main1.html">Головна</a></li>
+          <li ><a href="shop1.html">Магазин</a></li>
+          <li><a href="resipec1.html">Рецепти</a></li>
+          <li class="active"><a href="consumer.html">Мій Кабінет</a></li>
+          <li><a href="login.html" onclick="exit" id="log_tx">Вийти</a></li>
+          <li><a href="massage1.html"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+                 <div id="persPhoto" class="col-lg-4">
+                     <div>
+                        <p id="txt3">Ви можете завантажити свою фотографію</p>
+                     </div>
+                     <div id="photoFrame">
+                     	<img id="size_img" src="css/img/BQzSK0R2m0I.jpg">
+                     </div>
+                     <div id="upload">
+                         <input type="file" id="file">
+		                 <button onclick="readFile(document.getElementById('file'))" id="uploadBtn">Завантажити</button>
+                     </div>
+                 </div>
+                 
+                 <div  class="col-lg-4">
+                    <p id="txt">Особисті данні:</p>
+                      <div id="test"></div>
+                      <div id="test2"></div>
+                 </div>
+                 <div id="data">
+                     <div id="persName">
+                
+                     </div>
+                     <div id="persCont">
+                         <p id="txt2">Контактні данні</p>
+                         <div id="test3"></div>
+                          <div id="test4"></div>
+                     </div>
+                     
+                 </div>
+<!--
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fa fa-vk fa-2x"></i></a>
+      </div>
+    </div>
+  </div>
+  
+-->
+  <script>
+    
+    	function readFile(object){
+				var file = object.files[0];
+				var reader = new FileReader();
+                reader.readAsDataURL(file);
+				reader.onload = function(){
+					console.log("uploading...");   
+					var base64picture = reader.result;
+					
+				 	$.ajax({
+						'url':"http://localhost:8080/person",
+						'type':"PUT",
+						'contentType':"aplication/json",
+						'dataType':"json",
+						'data':JSON.stringify(),
+						'success':function(data){
+							console.log(data);
+						},
+                        'error':function(error){
+                            alert("ERROR");
+                        }
+					});
+				}
+               
+			}
+      
+              $.ajax({
+                            'url':'http://localhost:8080/person',
+                                'type':"GET",
+                                'contentType':'application/json',
+                                'success':function(data){
+                                    for(var i =0;i<data.length;i++){
+                                        var personName = $('#test');
+                                        personName.append('<p>'+data[i].nameperson+" "+data[i].lastname+'</p>');
+                                        
+                                    }
+                                    
+                                }
+                                });
+       
+                            $.ajax({
+                                'url':'http://localhost:8080/person',
+                                'type':"GET",
+                                'contentType':'application/json',
+                                'success':function(data){
+                                    for(var i =0;i<data.length;i++){
+                                        var personDate = $('#test2');
+                                        personDate.append('<p>' +data[i].age+'</p>');
+                                        
+                                    }
+                                    
+                                }
+                                });
+       
+                                $.ajax({
+                                'url':'http://localhost:8080/person',
+                                'type':"GET",
+                                'contentType':'application/json',
+                                'success':function(data){
+                                    for(var i =0;i<data.length;i++){
+                                        var personEmail = $('#test3');
+                                        personEmail.append('<p>'+data[i].email+'</p>');
+                                        
+                                    }
+                                    
+                                }
+                                });
+       
+                            $.ajax({
+                                'url':'http://localhost:8080/person',
+                                'type':"GET",
+                                'contentType':'application/json',
+                                'success':function(data){
+                                    for(var i =0;i<data.length;i++){
+                                        var personPhone = $('#test4');
+                                        personPhone.append('<p>' +data[i].phonenumber+'</p>');
+                                        
+                                    }
+                                    
+                                }
+                                });
+                                
+    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

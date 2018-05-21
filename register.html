@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/register.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		   <title>Cake shop</title>
+</head>
+  <body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CAKE SH<i class="fa fa-circle"></i>P</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="main.html">Головна</a></li>
+          <li><a href="shop.html">Магазин</a></li>
+          <li ><a href="resipec.html">Рецепти</a></li>
+          <li><a href="login.html">Вхід</a></li>
+          <li class="active"><a href="register.html">Реєстрація</a></li>
+          <li><a href="massage.html"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="col-md-offset-4 col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>Register</h4></div>
+        <div class="panel-body">
+            <form>
+                               <div class="form-group">
+                    <label>Ім'я:</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                     <div class="form-group">
+                     <label>Прізвище:</label>
+                    <input type="text" class="form-control" id="surname" required>
+                </div>
+                               <div class="form-group">
+                    <label>Пошта:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Пароль:</label>
+                    <input type="password" class="form-control" id="pass" required>
+                </div>
+
+                                         <div class="form-group">
+                     <label>Вік:</label>
+                    <input type="text" class="form-control" id="age" required>
+                </div>
+                     <div class="form-group">
+ <label>Введіть номер телефону:</label>
+                 <input type="text" class="form-control" id="phoneNumber" placeholder="+000000000000" required>
+                </div>
+
+
+<!--                <input type="submit" value="Підтвердити" id="register" class="btn btn-success btn-sm" />-->
+
+                
+                    <button type="submit" class="btn btn-default" id="register">Підтвердити</button>
+                
+
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+<script>
+    
+               function readFile(object){
+				var file = object.files[0];
+				var reader = new FileReader();
+                reader.readAsDataURL(file);
+				reader.onload = function(){
+					console.log("uploading...");
+                    console.log(reader.result);
+					var base64picture = reader.result;
+				}
+            }
+           
+    		$("#register").click(function(){
+			var name = $('#name').val();
+			var surname = $('#surname').val();
+			var email = $('#email').val();
+			var pass = $('#pass').val();
+                var age = $('#age').val();
+            var phoneNumber = $('#phoneNumber').val();
+            var role = $('#role').val();
+			var newUser = {
+                'nameperson':name,
+				'lastname':surname,
+				'email': email,
+				'password':pass,
+                'age':age,
+                'phonenumber':phoneNumber,
+                'role': 0
+			}
+      			$.ajax({
+				'url':'http://localhost:8080/person',
+                    'type':"PUT",
+                    'contentType':'application/json',
+                    'dataType':'json',
+                    'data':JSON.stringify(newUser),
+                    'success':function(data){
+                        alert('Дякуємо за реєстрацію');
+                            console.log(data);
+                            document.location.href = 'login.html';                   
+                    },
+                    'error':function(error){
+                                console.log(error);
+                            }
+                });
+            });
+      </script>
+
+</body>
+</html>

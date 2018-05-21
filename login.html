@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake shop</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/signin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CAKE SH<i class="fa fa-circle"></i>P</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="main.html">Головна</a></li>
+          <li><a href="shop.html">Магазин</a></li>
+          <li><a href="resipec.html">Рецепти</a></li>
+          <li class="active"><a href="login.html">Вхід</a></li>
+          <li><a href="register.html">Реєстрація</a></li>
+          <li><a href="massage.html"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pr-wrap">
+                <div class="pass-reset">
+                    <label>
+                        Enter the email you signed up with</label>
+                    <input type="email" placeholder="Email" />
+                    <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
+                </div>
+            </div>
+            <div class="wrap">
+                <p class="form-title">
+                   Вхід</p>
+                <form class="login">
+                <input type="text" id="login" placeholder="Логін" />
+                <input type="password" id="pass"  placeholder="Пароль" />
+                <input type="submit" value="Sign In" id="loginBtn" class="btn btn-success btn-sm" />
+ 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fa fa-vk fa-2x"></i></a>
+      </div>
+    </div>
+  </div>
+<script>
+       $('#loginBtn').click(function() {
+           var login = $('#login').val();
+           var pass = $('#pass').val();
+           var loginReq = {
+               'email': login,
+               'password': pass
+           };
+           
+           $.ajax({
+               'url':'http://localhost:8080/person',
+               'type':"POST",
+               'contentType':'application/json',
+               'dataType':'json',
+               'data':JSON.stringify(loginReq),
+               'success':function(data){
+                   if(data == true){
+                           alert('Вітаємо');
+                      if(login == "admin"){
+                                 document.location.href = 'admin.html'
+                         }else{
+                                   document.location.href = 'consumer.html';
+                           }
+                  }
+               },
+               'error':function(error){
+                   alert(JSON.parse(error.responseText).message);
+               }
+           });
+
+           $.ajax({
+               'url': 'http://localhost:8080/login',
+               'type': "POST",
+               'contentType': 'application/json',
+               'dataType': 'json',
+               'data': JSON.stringify(loginReq),
+               'success': function(data) {
+                   localStorage.clear()
+                   localStorage.setItem(data.key, data.value);
+                   console.log(localStorage.getItem("A-Token"));
+               }
+           });
+
+                            
+       });
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake shop</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/recipes.css">
+        <script>
+        $.ajax({
+                    'url':'http://localhost:8080/login',
+                    'type':"GET",
+                    'headers': {"Authorization": localStorage.getItem('A-token')}           
+                });
+            
+            function exit(object){
+            localStorage.removeItem("A-Token", data);
+        }
+    </script>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CAKE SH<i class="fa fa-circle"></i>P</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="main2.html">Головна</a></li>
+          <li ><a href="shop2.html">Магазин</a></li>
+          <li class="active"><a href="resipec2.html">Рецепти</a></li>
+          <li><a href="admin.html">Адмінка</a></li>
+          <li><a href="login.html" onclick="exit" id="log_tx">Вийти</a></li>
+          <li><a href="massage2.html"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-1"></div>
+          <div id="y" class="col-3">
+          <h2>Включи свій рецепт у список :&nbsp;&nbsp;&nbsp; 
+          <button id="click"><i id="u">Жми тут</i></button></h2>
+          
+        </div>
+ 
+<div id="t">
+ 
+ <div class="container">
+
+<div class="row equipo-item">
+ <div class="col-md-3 separador-vertical"><img src="css/img/vishnya.jpg" height="320" width="320px" class="img-responsive center-block"></div> 
+  <div class="col-md-9">
+    <h2 class="titulo-equipo">П'яна вишня</h2>
+  <p class="texto-equipo">Інгредієнти:
+1. Яйця – 6 шт.
+2. Борошно – 200 г
+3. Цукор – 450 г
+4. Ванільний цукор – 15 г
+5. Какао – 50 г
+6. Вишня (заморожена без кісточок) – 350 г
+7. Коньяк – 350 мл
+8. Молоко 3,2% – 150 мл
+9. Вершкове масло – 210 г
+10 Шоколад чорний 70% – 300 г</p>  
+  </div>
+</div>
+
+
+ <div class="row equipo-item">
+ <div class="col-md-3 separador-vertical"><img src="css/img/napoleon.jpg" height="320" width="320px" class="img-responsive center-block"></div> 
+  <div class="col-md-9">
+    <h2 class="titulo-equipo">Наполеон</h2>
+  <p class="texto-equipo">1.Маргарин — ¾ пачки для пышной выпечки
+2.Яйцо — 1 шт
+3.Молоко 3,2% жирности — 1 стакан
+4.Сахар — 1 ст.л.
+5.Сода, гашеная уксусом — 0,5 ч.л.
+6.Мука — 500г
+7.Мука для обработки теста — 300г.</p>  
+  </div>
+</div> 
+ 
+  <div class="row equipo-item">
+ <div class="col-md-3 separador-vertical"><img src="css/img/sparta.jpeg" height="320" width="320px" class="img-responsive center-block"></div> 
+  <div class="col-md-9">
+    <h2 class="titulo-equipo">Наполеон</h2>
+  <p class="texto-equipo">Для коржів: 
+1.борошно - 350 г;
+2.какао - 40 г;
+3.цукор - 150 г;
+4.яйця – 2 шт.;
+5.вершкове масло - 120 г;
+6.мед - 70 г;
+7.розпушувач - 2 ч. л.
+<br>
+Для крему: 
+1.молоко - 500 мл;
+2.вершкове масло - 60 г;
+3.жовтки – 2 шт.;
+4.кукурудзяний крохмаль - 2 ст. л.;
+5.дрібка солі;
+6.цукор - 6 ст. л.;
+7.ванілін - за смаком;
+8.вершкове масло - 250 г.</p>  
+  </div>
+</div> 
+<!--
+    <div class="row equipo-item">
+ <div class="col-md-3 separador-vertical"><img src="css/img/sparta.jpeg" height="320" width="320px" class="img-responsive center-block"></div> 
+  <div class="col-md-9">
+    <h2 class="titulo-equipo">Наполеон</h2>
+  <p class="texto-equipo">Для коржів: 
+1.борошно - 350 г;
+2.какао - 40 г;
+3.цукор - 150 г;
+4.яйця – 2 шт.;
+5.вершкове масло - 120 г;
+6.мед - 70 г;
+7.розпушувач - 2 ч. л.
+<br>
+Для крему: 
+1.молоко - 500 мл;
+2.вершкове масло - 60 г;
+3.жовтки – 2 шт.;
+4.кукурудзяний крохмаль - 2 ст. л.;
+5.дрібка солі;
+6.цукор - 6 ст. л.;
+7.ванілін - за смаком;
+8.вершкове масло - 250 г.</p>  
+  </div>
+</div> 
+-->
+
+</div>
+ 
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fa fa-vk fa-2x"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

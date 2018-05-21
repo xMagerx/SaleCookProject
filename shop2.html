@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake shop</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/magaz.css">
+         <script>
+        $.ajax({
+                    'url':'http://localhost:8080/login',
+                    'type':"GET",
+                    'headers': {"Authorization": localStorage.getItem('A-token')}           
+                });
+            
+            function exit(object){
+            localStorage.removeItem("A-Token", data);
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CAKE SH<i class="fa fa-circle"></i>P</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="main2.html">Головна</a></li>
+          <li class="active"><a href="shop2.html">Магазин</a></li>
+          <li><a href="resipec2.html">Рецепти</a></li>
+          <li><a href="admin.html">Адмінка</a></li>
+          <li><a href="login.html" onclick="exit" id="log_tx">Вийти</a></li>
+          <li><a href="massage2.html"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="headerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2"id="o">
+          <h1>Оберіть вашого виробника</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+ 
+ <div class="container">
+	<div class="row">
+		<h2>Пошук</h2>
+        <div class="col-lg-12">
+            <input type="search" class="form-control" id="input-search" placeholder="Пошукова строка..." >
+        </div>
+        <div class="searchable-container">
+            <div class="items col-xs-12 col-sm-6 col-md-6 col-lg-6 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                    <img src="css/img/12345.jpg" width="100" height="120"> 
+<!--                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>-->
+                    </div>
+                    
+                    <h4>Ім'я: Андрій Магер</h4>
+                    <p>Посада: програміст</p>
+                    <span>Телефон: 555-555-5555</span><br>
+                    <span>Пошта: cample@company.com</span>
+                </div>
+            </div>
+            <div class="items col-xs-12 col-sm-12 col-md-6 col-lg-6 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                                           <img src="css/img/1983702cec965bf2e81f2ab078c3c789.jpg" width="100" height="120"> 
+<!--                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>-->
+                    </div>
+                   
+                    <h4>Ім'я: Майкл Щур</h4>
+                    <p>Посада: телеведучий</p>
+                    <span>Телефон: 555-555-5555</span><br>
+                    <span>Пошта: sample@company.com</span>
+                </div>
+            </div>
+            <div class="items col-xs-12 col-sm-12 col-md-6 col-lg-6">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                                               <img src="css/img/57166fac83b421542fa439fb.png" width="100" height="120">
+<!--                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>-->
+                    </div>
+                   
+                    <h4>Ім'я: Ромко</h4>
+                    <p>Посада: кондитер</p>
+                    <span>Телефон: 555-555-5555</span><br>
+                    <span>Пошта: gample@company.com</span>
+                </div>
+            </div>
+            <div class="items col-xs-12 col-sm-12 col-md-6 col-lg-6">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                  <img src="css/img/images.jpg" width="100" height="120">
+<!--                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>-->
+                    </div>
+                  
+                    <h4>Ім'я: Василь</h4>
+                    <p>Посада: пекар</p>
+                    <span>Телефон: 555-555-5555</span><br>
+                    <span>Пошта: rample@company.com</span>
+                </div>
+            </div>
+
+        </div>
+	</div>
+</div>
+
+ 
+ 
+ 
+ 
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fa fa-vk fa-2x"></i></a>
+      </div>
+    </div>
+  </div>
+
+<script>
+    
+           
+        $('#input-search').on('keyup', function() {
+          var rex = new RegExp($(this).val(), 'i');
+            $('.searchable-container .items').hide();
+            $('.searchable-container .items').filter(function() {
+                return rex.test($(this).text());
+            }).show();
+        });
+   
+    </script>
+<script>
+                
+              function getUsers(){
+                            $.ajax({
+                                'url':'http://localhost:8080/person',
+                                'type':"GET",
+                                'contentType':'application/json',
+                                'success':function(data){
+                                    for(var i =0;i<data.length;i++){
+                                        var list = $('#list');
+                                        list.append('<li>'+data[i].nameperson+" "+data[i].lastname+" "+data[i].pass+" "+data[i].phonenumber+" "+data[i].role+'</li>');
+                                    
+                                    }
+                                    setClickOnDelete();
+                                }
+                            });
+                        }
+                        getUsers();
+            
+            
+
+    </script>
+
+</body>
+</html>

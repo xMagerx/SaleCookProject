@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;ua.com.Entity&apos; to &apos;ua.com.entity&apos;&#x0D;&#x0A;- Original project: &apos;SimpleRestServerPart&apos;&#x0D;&#x0A;- Original element: &apos;SimpleRestServerPart/src/main/java/ua.com.Entity&apos;&#x0D;&#x0A;- Renamed element: &apos;SimpleRestServerPart/src/main/java/ua.com.entity&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;ua.com.Entity&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;ua.com.Entity" name="ua.com.entity" qualified="false" references="true" stamp="1511368138930" textual="false" version="1.0"/>
+</session>

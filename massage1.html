@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake shop</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+        <script>
+        $.ajax({
+                    'url':'http://localhost:8080/login',
+                    'type':"GET",
+                    'headers': {"Authorization": localStorage.getItem('A-token')}           
+                });
+            
+            function exit(object){
+            localStorage.removeItem("A-Token", data);
+        }
+    </script>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CAKE SH<i class="fa fa-circle"></i>P</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="main1.html">Головна</a></li>
+          <li ><a href="shop1.html">Магазин</a></li>
+          <li><a href="resipec1.html">Рецепти</a></li>
+          <li><a href="consumer.html">Мій Кабінет</a></li>
+          <li><a href="login.html" onclick="exit" id="log_tx">Вийти</a></li>
+          <li  class="active"><a href="massage1.html"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ 
+ <div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                   Зв'яжіться з нами <small>покращемо сайт разом</small></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Ім'я</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Пошта</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Відправник</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Оберіть:</option>
+                                <option value="consumer">Споживач</option>
+                                <option value="person">Продавець</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Повідомлення</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                            Відправити </button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Наш офіс</legend>
+            <address>
+                <strong>Facebook, Inc.</strong><br>
+                555 Bermuda triangle<br>
+                Lviv, oblique lane 555<br>
+            </address>
+            <address>
+                <strong>Ел. пошта</strong><br>
+                <a href="mailto:#">magerandrewlviv@gmail.com</a>
+            </address>
+            </form>
+        </div>
+    </div>
+</div>
+
+ 
+  <div id="f">
+    <div class="container"> 
+      <div class="row centered">
+        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fa fa-vk fa-2x"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

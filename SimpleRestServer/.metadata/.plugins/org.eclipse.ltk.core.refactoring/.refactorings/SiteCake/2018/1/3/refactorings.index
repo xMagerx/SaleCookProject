@@ -1,0 +1,37 @@
+1516277660968	Rename package 'controller'
+1516277672281	Rename package 'dto'
+1516277681643	Rename package 'editor'
+1516277690484	Rename package 'entity'
+1516277698374	Rename package 'repository'
+1516277706387	Rename package 'request'
+1516277714174	Rename package 'response'
+1516277729281	Rename package 'security'
+1516277736513	Rename package 'service'
+1516277743786	Rename package 'service.impl'
+1516277749928	Rename package 'specification'
+1516279385801	Copy compilation unit
+1516279403839	Copy compilation unit
+1516279410090	Copy compilation unit
+1516279631494	Copy compilation unit
+1516279665595	Copy compilation units
+1516279970506	Copy compilation units
+1516280035239	Copy compilation units
+1516280342316	Copy packages
+1516280731159	Delete element
+1516281090035	Copy compilation unit
+1516281449255	Copy compilation units
+1516288485734	Copy compilation units
+1516288511266	Copy compilation units
+1516288555502	Copy compilation units
+1516288659041	Copy compilation unit
+1516288733655	Copy compilation unit
+1516288846587	Rename type 'LoginRequest'
+1516288884259	Copy compilation unit
+1516289000724	Copy compilation unit
+1516289008949	Copy compilation unit
+1516289326979	Rename type 'LoginRequests'
+1516289371788	Copy compilation unit
+1516289379110	Copy compilation unit
+1516289438691	Copy compilation unit
+1516289475917	Copy compilation unit
+1516380202937	Copy package

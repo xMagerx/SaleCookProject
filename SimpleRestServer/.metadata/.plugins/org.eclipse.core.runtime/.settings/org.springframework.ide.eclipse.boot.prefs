@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=5
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.jdbc=5
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=5
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=5
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=SiteCake-1
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=1.5.9.RELEASE
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Simple Rest Server for my students
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=ua.com
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=1.8
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=SiteCake-1
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=ua.com
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=http\://start.spring.io\n

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тортики</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/admin.css">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+        $.ajax({
+                    'url':'http://localhost:8080/login',
+                    'type':"GET",
+                    'headers': {"Authorization": localStorage.getItem('A-token')}           
+                });
+            
+            function exit(object){
+            localStorage.removeItem("A-Token", data);
+        }
+    </script>
+
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CAKE SH<i class="fa fa-circle"></i>P</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="main2.html">Головна</a></li>
+          <li ><a href="shop2.html">Магазин</a></li>
+          <li><a href="resipec2.html">Рецепти</a></li>
+          <li class="active"><a href="admin.html">Адмінка</a></li>
+          <li><a href="login.html" onclick="exit" id="log_txx">Вийти</a></li>
+          <li><a href="massage2.html"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<!--  --------------------------------------------------                -->
+            <!-------------------------CONSUMERS------------------------->
+
+            <div class="inv">
+                <div class="box1" id="box1">
+                    <h2>Добавити користувача</h2>
+
+                        <p>Ім'я користувача</p>
+                        <input class="input" id="name" type="text" placeholder="Ім'я">
+                        <p>Прізвище</p>
+                        <input class="input" id="surname" type="text" placeholder="Прізвище">
+                        <p>Адреса електронної пошти</p>
+                        <input class="input" id="email" type="text" placeholder="email@gmail.com">
+                        <p>Пароль</p>
+                        <input class="input" id="password" type="password" placeholder="Пароль"><br><br>
+                        <p>Вік</p>
+                        <input class="input" id="age" type="text" placeholder="0"><br><br>
+                        <p>Номер телефону</p>
+                        <input class="input" id="phoneNumber" type="text" placeholder="+000000000000">
+ <br><br>
+
+                        
+                        <button id="regB">Добавити</button><br><br>
+
+                </div>
+            </div>
+
+                  
+      <div class="col-lg-4">
+                <div class="box2" id="box2">
+                    <h2>Користувачі:</h2>
+                    <ol id="list">
+
+                    </ol>
+                </div>
+            </div>
+<!---------------------------Рецепт---------------------------->
+
+               <div class="auto" id="auto2">
+                <div class="inv">
+                    <div class="box1" id="box3">
+                        <h2>Добавити рецепт</h2>
+
+                            <p>Назва виробу</p>
+                            <input class="input" id="nameTour" type="text" placeholder="Назва">
+                            <p>Ціна</p>
+                            <input class="input" id="priceTour" type="text" placeholder="Ціна">
+                            <br><br>
+
+                            <select name="Consumers" id="consumersSelect">
+                                <option value="">Користувач</option>
+                            </select>
+                             
+                            <button id="add">Добавити</button><br><br>
+
+                    </div>
+                </div>
+
+                <div class="inv">
+                    <div class="box2" id="box4">
+                        <h2>Рецепти:</h2>
+                        <br>1.П'яна вишня
+                         <br>2.Наполеон
+                          <br>3.Наполеон
+                        <ol id="list2">
+
+                        </ol>
+                   </div>
+                </div>
+            </div>
+<!---------------------------Доставка----------------------->
+
+            <div class="auto" id="auto4">
+                <div class="inv">
+                <div class="box1" id="box7">
+                <h2>Спосіб доставки</h2>
+
+                    <p>Достака</p>
+                    <input class="input" id="nameTransport" type="text" placeholder="Назва">
+
+                    <br><br>
+
+   
+                     
+                    <button id="add3">Добавити</button><br><br>
+
+            </div>
+        </div>
+
+            <div class="inv">
+            <div class="box2" id="box8">
+                <h2>Даставка:</h2>
+                <ol id="list4">
+
+                </ol>
+            </div>
+        </div>
+            </div>     
+                 
+        <script>
+             function getUsers(){
+                            $.ajax({
+                                'url':'http://localhost:8080/person',
+                                'type':"GET",
+                                'contentType':'application/json',
+                                'success':function(data){
+                                    for(var i =0;i<data.length;i++){
+                                        var list = $('#list');
+                                        list.append('<li>'+data[i].nameperson+" "+data[i].lastname+" "+data[i].email+" "+data[i].age+" "+data[i].phonenumber+" "+data[i].role+'</li>');
+                                        list.append('<button class="delete" value="'+data[i].id+'">Видалити</button>')
+                                    }
+                                    setClickOnDelete();
+                                }
+                            });
+                        }
+                        getUsers();
+            
+//                           $.ajax({
+//                    'url':'http://localhost:8080/person',
+//                    'type':"PUT",
+//                    'contentType':'application/json',
+//                    'dataType':'json',
+//                    'data':JSON.stringify(newUser),
+//                    'success':function(data){
+//                        var list = $('#list');
+//                        list.append('<li>'+data.nameperson+" "+data.lastname+" "+data.email+" "+data.age+" "+data.phonenumber+'</li>');
+//                        list.append('<button class="delete" value="'+data.id+'">Видалити</button><br>');
+//                        setClickOnDelete();
+//                    }
+//                });
+//            
+            function setClickOnDelete(){
+                $('.delete').click(function(){
+                    var deleteReq = {
+                        'id':this.value
+                    }
+                     $.ajax({
+                        'url':'http://localhost:8080/person',
+                        'type':"DELETE",
+                        'contentType':'application/json',
+                        'dataType':'json',
+                        'data':JSON.stringify(deleteReq),
+                        'success':function(){
+                            $('#list').empty();
+                            getUsers();
+                        }
+                    });
+                });
+            }	
+//            ---------------------------------------------
+               
+               function readFile(object){
+				var file = object.files[0];
+				var reader = new FileReader();
+                reader.readAsDataURL(file);
+				reader.onload = function(){
+					console.log("uploading...");
+                    console.log(reader.result);
+					var base64picture = reader.result;
+				}
+            }
+           
+    		$("#register").click(function(){
+			var name = $('#name').val();
+			var surname = $('#surname').val();
+			var email = $('#email').val();
+			var pass = $('#pass').val();
+                var age = $('#age').val();
+            var phoneNumber = $('#phoneNumber').val();
+            var role = $('#role').val();
+			var newUser = {
+                'nameperson':name,
+				'lastname':surname,
+				'email': email,
+				'password':pass,
+                'age':age,
+                'phonenumber':phoneNumber,
+                'role': 0
+			}
+      			$.ajax({
+				'url':'http://localhost:8080/person',
+                    'type':"PUT",
+                    'contentType':'application/json',
+                    'dataType':'json',
+                    'data':JSON.stringify(newUser),
+                    'success':function(data){
+                        alert('Дякуємо за реєстрацію');
+                            console.log(data);
+                            document.location.href = 'admin.html';                   
+                    },
+                    'error':function(error){
+                                console.log(error);
+                            }
+                });
+            });
+            
+            
+    </script>         
+</body>
+</html>

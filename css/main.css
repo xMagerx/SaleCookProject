@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
+
+body{
+/*      background: url(img/dessert-3129516_1920.jpg);*/
+    background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+    
+    -webkit-font: antialiased;
+    -webkit-overflow: touch;
+    
+    margin-top: 60px;
+    
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #333;
+}
+p{
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+.centered{
+    text-align: center;
+}
+a{
+    color: #169fc9;
+    font-size: 17px;
+}
+a:hover,a:focus{
+    color:#7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+hr{
+    display:block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+	padding: 0;    
+}
+.navbar{
+	font-weight: 200;
+	font-size: 13px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+.navbar-inverse{
+	background: #2d2d2d;
+	border-color: #2d2d2d;
+}
+.navbar-inverse .navbar-nav>.active > a{
+	background-color: #5d8edd;
+}
+
+.navbar-inverse .navbar-brand{
+	color:#999;
+	font-weight: bolder;
+	font-size: 22px;
+	letter-spacing: 1px;
+}
+
+#content{
+	background: url(img/money2.png) no-repeat center top;
+	margin-top: 0px;
+	padding-top: 20px;
+	text-align: center;
+	background-attachment: relative;
+	background-position: center;
+	min-height: 500px;
+	width: 100%;
+	
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size: cover;
+}
+
+#content h1{
+	margin-top: 100px;
+	color: #323e42;
+	font-size: 70px;
+	font-weight: 300;
+	letter-spacing: 2px;
+	font-family: 'Indie Flower', cursive;
+}
+#content h3{
+	color: #323e42;
+	font-size: 40px;
+	font-weight: 50;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-family: 'Indie Flower', cursive;
+}
+.w{
+	padding-top: 35px;
+}
+.w h4{
+	font-size: 25px;
+}
+#f{
+    margin-top: 5px;
+}
+#r{
+    margin-top: 15px;
+}
+.tilt{
+    margin-top: 20px;
+}
+.jumbotron {
+background: #358CCE;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+
+
+.panel-default > .panel-heading {
+    background: #e0c070;
+
+    border-bottom:0px; }
+
+.panel-default{
+    border:1px solid black;
+    margin-top: 20px;
+}
+#P{
+    font-weight: 750;
+}
+.separador-vertical{
+  border-right:1px solid #bfbdbd;
+  }
+  
+  .titulo-equipo{
+  margin-top:0px;
+      
+    }
+    
+  .equipo-item{
+    border:	1px solid #D1CFCF ;
+        padding: 10px;
+    border-radius:10px;
+  margin-bottom:25px;
+      margin-top: 25px;
+      }
+#t{
+    margin-top: 20px;
+}
+#y>h2{
+    margin-top: 80px;
+    margin-left: 30px;
+    font-family: "Lato";
+    color: #555;
+}
+#u{
+    font-style:none;
+    font-family: "Raleway";
+    color: #3e8fc9;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+#u:hover,#u:focus{
+        color:#d64a31;
+    text-decoration: none;
+    outline: 0;
+}
